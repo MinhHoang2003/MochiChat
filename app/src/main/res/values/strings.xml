@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MochiChat</string>
+    <string name="title_menu_chats">Chats</string>
+    <string name="title_menu_group">Groups</string>
+    <string name="title_menu_friends">Contacts</string>
+    <string name="title_menu_setting">Settings</string>
+    <string name="text_search_hint">Search</string>
 </resources>
