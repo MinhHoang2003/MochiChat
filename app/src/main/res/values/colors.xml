@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#a8e490</color>
-    <color name="colorPrimaryDark">#a8e490</color>
-    <color name="colorAccent">#D81B60</color>
+
+
     <color name="colorMessageReceive">#f0f0f0</color>
     <color name="colorMessageSend">#fafff2</color>
     <color name="colorDeleteMessage_OfflineStatus">#d0021b</color>
@@ -11,4 +10,15 @@
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="blue">#000dff</color>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#a8e490</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="main">#a8e490</color>
+    <color name="dots_no_active">#fafff2</color>
+    <color name="dots_active">#a8e490</color>
+    <color name="color_text_white">#FFFFFF</color>
+    <color name="color_text">#4a4a4a</color>
+    <color name="color_blue">#4a90e2</color>
+    <color name="color_text_hint">#8e8e92</color>
+
 </resources>

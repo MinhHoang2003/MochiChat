@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <resources xmlns:tools="http://schemas.android.com/tools">
     <dimen name="bottom_navigation_icon_size" tools:override="true">30dp</dimen>
     <dimen name="design_bottom_navigation_height" tools:override="true">62dp</dimen>
+    <dimen name="size_icon_height">20dp</dimen>
+    <dimen name="size_icon_width">20dp</dimen>
+
+    //text
+    <dimen name="text_min_small">10sp</dimen>
+    <dimen name="text_small">12sp</dimen>
+    <dimen name="text_normal">22sp</dimen>
+    //margin
+    <dimen name="margin_top_small">6dp</dimen>
+    <dimen name="margin_top">12dp</dimen>
+    <dimen name="margin_normal">22dp</dimen>
+
 </resources>

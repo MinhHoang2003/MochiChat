@@ -1,2 +1,0 @@
-package vnjp.monstarlablifetime.mochichat
-
