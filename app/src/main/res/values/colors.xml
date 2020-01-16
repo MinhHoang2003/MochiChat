@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimary">#a8e490</color>
+    <color name="colorPrimaryDark">#a8e490</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="colorMessageReceive">#f0f0f0</color>
+    <color name="colorMessageSend">#fafff2</color>
+    <color name="colorDeleteMessage_OfflineStatus">#d0021b</color>
+    <color name="colorMessageUnread">#f5a623</color>
+    <color name="colorOnlineStatus">#7ed321</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="blue">#000dff</color>
 </resources>

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/appIcon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/icon_logo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/titleEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="73dp"
+        android:layout_marginTop="27dp"
+        android:text="Enter your email ID"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appIcon" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/emailContainer"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="63dp"
+        android:background="@drawable/bg_text_input"
+        app:layout_constraintLeft_toLeftOf="@id/titleEmail"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleEmail">
+
+        <EditText
+            android:id="@+id/edtEmail"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:height="0dp"
+            android:background="@null"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:paddingStart="20dp"
+            android:singleLine="true"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/emailStatus" />
+
+        <ImageView
+            android:id="@+id/emailStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="12dp"
+            android:src="@drawable/ic_uncheck_16px"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/titlePassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="27dp"
+        android:text="Type your password"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/emailContainer" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/passwordContainer"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="63dp"
+        android:background="@drawable/bg_text_input"
+        app:layout_constraintLeft_toLeftOf="@id/titlePassword"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titlePassword">
+
+        <EditText
+            android:id="@+id/edtPassword"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:height="0dp"
+            android:background="@null"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:paddingStart="20dp"
+            android:singleLine="true"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/passwordStatus" />
+
+        <ImageView
+            android:id="@+id/passwordStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/ic_check"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/titlePasswordRetype"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="73dp"
+        android:layout_marginTop="27dp"
+        android:text="Retype your password"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/passwordContainer" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/retypePasswordContainer"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="63dp"
+        android:background="@drawable/bg_text_input"
+        app:layout_constraintLeft_toLeftOf="@id/titlePasswordRetype"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titlePasswordRetype">
+
+        <EditText
+            android:id="@+id/edtPasswordRetype"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:height="0dp"
+            android:background="@null"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:paddingStart="20dp"
+            android:singleLine="true"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/passwordRetypeStatus" />
+
+        <ImageView
+            android:id="@+id/passwordRetypeStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/ic_check"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textLinkProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:maxLines="1"
+        android:paddingLeft="20dp"
+        android:singleLine="true"
+        android:text="Link your social media profiles"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/retypePasswordContainer" />
+
+    <ImageView
+        android:id="@+id/buttonFacebook"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/icon_facebook"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/buttonTwitter"
+        app:layout_constraintTop_toBottomOf="@id/textLinkProfile" />
+
+    <ImageView
+        android:id="@+id/buttonTwitter"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="42dp"
+        android:src="@drawable/icon_twitter"
+        app:layout_constraintLeft_toRightOf="@id/buttonFacebook"
+        app:layout_constraintRight_toLeftOf="@id/buttonGoogle"
+        app:layout_constraintTop_toTopOf="@id/buttonFacebook" />
+
+    <ImageView
+        android:id="@+id/buttonGoogle"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="42dp"
+        android:src="@drawable/icon_google_plus"
+        app:layout_constraintLeft_toRightOf="@id/buttonTwitter"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/buttonTwitter" />
+
+    <Button
+        android:id="@+id/buttonSignUp"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_marginLeft="63dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="63dp"
+        android:background="@drawable/bg_sign_up_button"
+        android:text="Sign Up"
+        android:textColor="@color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonFacebook" />
+
+    <TextView
+        android:id="@+id/titleHaveAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:layout_marginBottom="10dp"
+        android:text="Already have an account? "
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/textHaveAccount" />
+
+    <TextView
+        android:id="@+id/textHaveAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SignIn"
+        android:textColor="@color/blue"
+        app:layout_constraintLeft_toRightOf="@id/titleHaveAccount"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/titleHaveAccount" />
+</androidx.constraintlayout.widget.ConstraintLayout>

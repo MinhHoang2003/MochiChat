@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_chats"
+        android:icon="@drawable/bg_chats_selector"
+        android:title="@string/title_menu_chats"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/menu_groups"
+        android:icon="@drawable/bg_groups_selector"
+        android:title="@string/title_menu_group"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/menu_friends"
+        android:icon="@drawable/bg_friend_selector"
+        android:title="@string/title_menu_friends"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/menu_setting"
+        android:icon="@drawable/bg_setting_selector"
+        android:title="@string/title_menu_setting"
+        app:showAsAction="always" />
+</menu>

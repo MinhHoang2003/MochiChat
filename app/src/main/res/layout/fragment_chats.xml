@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/buttonShowChatHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="15dp"
+        android:padding="10dp"
+        android:text="Recent Chat"
+        android:textAlignment="textStart"
+        android:textAllCaps="false" />
+
+    <net.cachapa.expandablelayout.ExpandableLayout
+        android:id="@+id/expandedLayoutChatHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:el_duration="1000"
+        app:el_expanded="true"
+        app:layout_constraintTop_toBottomOf="@id/buttonShowChatHistory">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerChatHistory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </net.cachapa.expandablelayout.ExpandableLayout>
+
+    <Button
+        android:id="@+id/buttonFriends"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:elevation="15dp"
+        android:padding="10dp"
+        android:text="Available Friends"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@id/expandedLayoutChatHistory" />
+
+    <net.cachapa.expandablelayout.ExpandableLayout
+        android:id="@+id/expandedLayoutFriend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:el_duration="1000"
+        app:el_expanded="true"
+        app:layout_constraintTop_toBottomOf="@id/buttonFriends">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerFriend"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+    </net.cachapa.expandablelayout.ExpandableLayout>
+
+</LinearLayout>
