@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -13,15 +14,16 @@
         android:background="@drawable/icon_logo"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/titleEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="73dp"
+        android:layout_marginStart="73dp"
         android:layout_marginTop="27dp"
-        android:text="Enter your email ID"
+        android:text="@string/enter_your_email_id"
         android:textAlignment="textStart"
         android:textColor="@color/black"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -49,7 +51,8 @@
             android:paddingStart="20dp"
             android:singleLine="true"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/emailStatus" />
+            app:layout_constraintRight_toLeftOf="@id/emailStatus"
+            tools:ignore="Autofill,RtlSymmetry" />
 
         <ImageView
             android:id="@+id/emailStatus"
@@ -60,7 +63,8 @@
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription,RtlHardcoded" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -71,7 +75,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="73dp"
         android:layout_marginTop="27dp"
-        android:text="Type your password"
+        android:text="@string/type_your_password"
         android:textAlignment="textStart"
         android:textColor="@color/black"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -99,7 +103,8 @@
             android:paddingStart="20dp"
             android:singleLine="true"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/passwordStatus" />
+            app:layout_constraintRight_toLeftOf="@id/passwordStatus"
+            tools:ignore="RtlSymmetry" />
 
         <ImageView
             android:id="@+id/passwordStatus"
@@ -110,7 +115,8 @@
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -124,7 +130,8 @@
         android:textAlignment="textStart"
         android:textColor="@color/black"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/passwordContainer" />
+        app:layout_constraintTop_toBottomOf="@id/passwordContainer"
+        tools:ignore="HardcodedText,RtlHardcoded" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/retypePasswordContainer"
@@ -148,7 +155,8 @@
             android:paddingStart="20dp"
             android:singleLine="true"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/passwordRetypeStatus" />
+            app:layout_constraintRight_toLeftOf="@id/passwordRetypeStatus"
+            tools:ignore="Autofill,LabelFor,RtlSymmetry" />
 
         <ImageView
             android:id="@+id/passwordRetypeStatus"
@@ -159,7 +167,8 @@
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -169,12 +178,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:maxLines="1"
-        android:paddingLeft="20dp"
+        android:paddingStart="20dp"
         android:singleLine="true"
-        android:text="Link your social media profiles"
+        android:text="@string/link_your_social_media_profiles"
         android:textAlignment="center"
         android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@id/retypePasswordContainer" />
+        app:layout_constraintTop_toBottomOf="@id/retypePasswordContainer"
+        tools:ignore="RtlSymmetry" />
 
     <ImageView
         android:id="@+id/buttonFacebook"
@@ -185,27 +195,30 @@
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/buttonTwitter"
-        app:layout_constraintTop_toBottomOf="@id/textLinkProfile" />
+        app:layout_constraintTop_toBottomOf="@id/textLinkProfile"
+        tools:ignore="ContentDescription" />
 
     <ImageView
         android:id="@+id/buttonTwitter"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginLeft="42dp"
+        android:layout_marginStart="42dp"
         android:src="@drawable/icon_twitter"
         app:layout_constraintLeft_toRightOf="@id/buttonFacebook"
         app:layout_constraintRight_toLeftOf="@id/buttonGoogle"
-        app:layout_constraintTop_toTopOf="@id/buttonFacebook" />
+        app:layout_constraintTop_toTopOf="@id/buttonFacebook"
+        tools:ignore="ContentDescription" />
 
     <ImageView
         android:id="@+id/buttonGoogle"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginLeft="42dp"
+        android:layout_marginStart="42dp"
         android:src="@drawable/icon_google_plus"
         app:layout_constraintLeft_toRightOf="@id/buttonTwitter"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/buttonTwitter" />
+        app:layout_constraintTop_toTopOf="@id/buttonTwitter"
+        tools:ignore="ContentDescription" />
 
     <Button
         android:id="@+id/buttonSignUp"
@@ -215,7 +228,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginRight="63dp"
         android:background="@drawable/bg_sign_up_button"
-        android:text="Sign Up"
+        android:text="@string/signup"
         android:textColor="@color/white"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -227,7 +240,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="42dp"
         android:layout_marginBottom="10dp"
-        android:text="Already have an account? "
+        android:text="@string/already_have_an_account"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_chainStyle="packed"
@@ -238,7 +251,7 @@
         android:id="@+id/textHaveAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SignIn"
+        android:text="@string/signin"
         android:textColor="@color/blue"
         app:layout_constraintLeft_toRightOf="@id/titleHaveAccount"
         app:layout_constraintRight_toRightOf="parent"

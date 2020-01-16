@@ -1,8 +1,43 @@
 <resources>
     <string name="app_name">MochiChat</string>
+
     <string name="title_menu_chats">Chats</string>
     <string name="title_menu_group">Groups</string>
     <string name="title_menu_friends">Contacts</string>
     <string name="title_menu_setting">Settings</string>
     <string name="text_search_hint">Search</string>
+
+    <string name="mochi">mochi</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="sign_in">LOGIN</string>
+    <string name="connect_with_friends">connect with friends!</string>
+    <string name="content_first">Sed ut perspiciatis unde omnis iste rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae.</string>
+    <string name="get_in_touch_instantly">get in touch instantly</string>
+    <string name="content_second">Eaque ipsa quae abed ut perspiciatis unde omnis iste rem aperiam, eaque ipsa quae ab illo inventore verita.</string>
+    <string name="many_platforms_one_chat">many platforms, one chat</string>
+    <string name="content_three">Aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae. Isterem aperiam, eaque ab illo.</string>
+    <string name="username">Username</string>
+    <string name="password">PassWord</string>
+    <string name="remember_me">Remember me</string>
+    <string name="you_can_also_login_with">You can also login with …</string>
+    <string name="login">Login</string>
+    <string name="not_registered_yet_sign_up">Not registered yet?<font color='#000dff'>" Sign up!"</font> </string>
+    <string name="larry_page">Larry Page</string>
+    <string name="view_profile">View Profile</string>
+    <string name="delete_conversation">Delete Conversation</string>
+    <string name="report_conversation">Report Conversation</string>
+    <string name="view_chat_history">View Chat History</string>
+    <string name="block_user">Block User</string>
+    <string name="your_group_chats">Your group chats</string>
+    <string name="chris_larry_mark">Chris, Larry, Mark</string>
+    <string name="_1222">12</string>
+    <string name="aa">Nhập tin nhắn …</string>
+    <string name="enter_your_email_id">Enter your email ID</string>
+    <string name="type_your_password">Type your password</string>
+    <string name="link_your_social_media_profiles">Link your social media profiles</string>
+    <string name="signup">Sign Up</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="signin">SignIn</string>
+
+
 </resources>
