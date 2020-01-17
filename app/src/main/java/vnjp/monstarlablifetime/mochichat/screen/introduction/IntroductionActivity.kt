@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager.widget.ViewPager
 import vnjp.monstarlablifetime.mochichat.R
 import vnjp.monstarlablifetime.mochichat.screen.authenication.login.LoginActivity
-import vnjp.monstarlablifetime.mochichat.screen.authenication.register.RegisterActivity
+import vnjp.monstarlablifetime.mochichat.screen.authenication.login.RegisterActivity
 import vnjp.monstarlablifetime.mochichat.screen.introduction.introfragment.FragmentFirst
 import vnjp.monstarlablifetime.mochichat.screen.introduction.introfragment.FragmentSecond
 
