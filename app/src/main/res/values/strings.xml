@@ -37,7 +37,7 @@
     <string name="link_your_social_media_profiles">Link your social media profiles</string>
     <string name="signup">Sign Up</string>
     <string name="already_have_an_account">Already have an account?</string>
-    <string name="signin">SignIn</string>
+    <string name="signin"> SignIn</string>
 
 
 </resources>

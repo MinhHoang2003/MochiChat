@@ -171,6 +171,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/color_text"
+        android:id="@+id/tvSignUp"
         android:text="@string/not_registered_yet_sign_up"
         app:layout_constraintTop_toBottomOf="@+id/contentLinearLayout"
         app:layout_constraintLeft_toLeftOf="parent"

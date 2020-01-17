@@ -35,13 +35,13 @@
         android:layout_height="52dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="63dp"
-        android:background="@drawable/bg_text_input"
+        android:background="@drawable/bg_edittext"
         app:layout_constraintLeft_toLeftOf="@id/titleEmail"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/titleEmail">
 
         <EditText
-            android:id="@+id/edtEmail"
+            android:id="@+id/edtEmailRegister"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:height="0dp"
@@ -52,14 +52,14 @@
             android:singleLine="true"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/emailStatus"
-            tools:ignore="Autofill,RtlSymmetry" />
+            tools:ignore="Autofill,LabelFor,RtlSymmetry" />
 
         <ImageView
             android:id="@+id/emailStatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="12dp"
-            android:src="@drawable/ic_uncheck_16px"
+            android:src="@drawable/ic_check"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -87,13 +87,13 @@
         android:layout_height="52dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="63dp"
-        android:background="@drawable/bg_text_input"
+        android:background="@drawable/bg_edittext"
         app:layout_constraintLeft_toLeftOf="@id/titlePassword"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/titlePassword">
 
         <EditText
-            android:id="@+id/edtPassword"
+            android:id="@+id/edtPasswordRegister"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:height="0dp"
@@ -104,7 +104,7 @@
             android:singleLine="true"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/passwordStatus"
-            tools:ignore="RtlSymmetry" />
+            tools:ignore="Autofill,LabelFor,RtlSymmetry" />
 
         <ImageView
             android:id="@+id/passwordStatus"
@@ -139,7 +139,7 @@
         android:layout_height="52dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="63dp"
-        android:background="@drawable/bg_text_input"
+
         app:layout_constraintLeft_toLeftOf="@id/titlePasswordRetype"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/titlePasswordRetype">
@@ -147,9 +147,9 @@
         <EditText
             android:id="@+id/edtPasswordRetype"
             android:layout_width="0dp"
+            android:background="@drawable/bg_edittext"
             android:layout_height="match_parent"
             android:height="0dp"
-            android:background="@null"
             android:inputType="textPassword"
             android:maxLines="1"
             android:paddingStart="20dp"
@@ -162,6 +162,18 @@
             android:id="@+id/passwordRetypeStatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:src="@drawable/ic_cross"
+            android:visibility="gone"
+            android:padding="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+        <ImageView
+            android:id="@+id/passwordRetype"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="12dp"
             android:src="@drawable/ic_check"
             android:visibility="gone"
@@ -169,7 +181,6 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="ContentDescription" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
@@ -227,7 +238,7 @@
         android:layout_marginLeft="63dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="63dp"
-        android:background="@drawable/bg_sign_up_button"
+        android:background="@drawable/bg_button"
         android:text="@string/signup"
         android:textColor="@color/white"
         app:layout_constraintLeft_toLeftOf="parent"
