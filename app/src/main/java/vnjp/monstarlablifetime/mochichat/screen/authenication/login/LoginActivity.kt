@@ -12,7 +12,6 @@ import androidx.lifecycle.ViewModelProviders
 import kotlinx.android.synthetic.main.activity_login.*
 import vnjp.monstarlablifetime.mochichat.R
 import vnjp.monstarlablifetime.mochichat.data.base.BaseActivity
-import vnjp.monstarlablifetime.mochichat.screen.chat.ChatActivity
 import vnjp.monstarlablifetime.mochichat.screen.home.HomeActivity
 
 class LoginActivity : BaseActivity(), View.OnClickListener {

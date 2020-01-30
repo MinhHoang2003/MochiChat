@@ -9,23 +9,22 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.items_recent_chats.view.*
 import vnjp.monstarlablifetime.mochichat.R
-import vnjp.monstarlablifetime.mochichat.data.model.Status
 import vnjp.monstarlablifetime.mochichat.data.repository.ChatsRepository
 
 class ChatsAdapter(
     query: FirebaseRecyclerOptions<Boolean>,
     private val context: Context
 ) : FirebaseRecyclerAdapter<Boolean, ChatsAdapter.ChatViewHolder>(query) {
+    var onClick: ((String) -> Unit)? = null
 
     inner class ChatViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(itemKey: String) {
             getItem(itemKey, itemView)
+            itemView.setOnClickListener {
+                onClick?.invoke(itemKey)
+            }
         }
     }
 
@@ -37,6 +36,7 @@ class ChatsAdapter(
     override fun onBindViewHolder(p0: ChatViewHolder, p1: Int, p2: Boolean) {
         p0.bind(snapshots.getSnapshot(p1).key!!)
     }
+
 
     fun getItem(key: String, itemView: View) {
         val chatsRepository = ChatsRepository()

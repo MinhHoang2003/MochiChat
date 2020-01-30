@@ -1,6 +1,7 @@
 package vnjp.monstarlablifetime.mochichat.screen.home
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -17,6 +18,7 @@ import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.fragment_chats.*
 import vnjp.monstarlablifetime.mochichat.R
 import vnjp.monstarlablifetime.mochichat.data.model.ChatMappingItem
+import vnjp.monstarlablifetime.mochichat.screen.chat.ChatDetailActivity
 
 /**
  * A simple [Fragment] subclass.
@@ -24,6 +26,7 @@ import vnjp.monstarlablifetime.mochichat.data.model.ChatMappingItem
 class ChatsFragment : Fragment() {
     companion object {
         var TAG: String = ChatsFragment::class.java.simpleName
+        const val KEY_ITEM = "KEY_ITEM"
     }
     private lateinit var recyclerViewRecentChats: RecyclerView
     private lateinit var chatsAdapter: ChatsAdapter
@@ -73,6 +76,14 @@ class ChatsFragment : Fragment() {
             if (expandedLayoutFriend.isExpanded) expandedLayoutFriend.collapse()
             else expandedLayoutFriend.expand()
         }
+
+        chatsAdapter.onClick = { key ->
+            val intent = Intent(this.requireContext(), ChatDetailActivity::class.java)
+            intent.putExtra(KEY_ITEM, key)
+            startActivity(intent)
+        }
+
+
     }
 
     override fun onStop() {
