@@ -13,6 +13,7 @@ import kotlinx.android.synthetic.main.activity_login.*
 import vnjp.monstarlablifetime.mochichat.R
 import vnjp.monstarlablifetime.mochichat.data.base.BaseActivity
 import vnjp.monstarlablifetime.mochichat.screen.chat.ChatActivity
+import vnjp.monstarlablifetime.mochichat.screen.home.HomeActivity
 
 class LoginActivity : BaseActivity(), View.OnClickListener {
     private lateinit var btnLogin: Button
@@ -61,7 +62,7 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
             authenticationViewModel.isSuccess.observe(this, Observer {
                 if (it) {
                     showDialog(false)
-                    startActivity(Intent(this, ChatActivity::class.java))
+                    startActivity(Intent(this, HomeActivity::class.java))
                     finish()
                 }
             })
