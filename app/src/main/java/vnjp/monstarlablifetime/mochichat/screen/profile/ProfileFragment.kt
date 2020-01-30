@@ -1,4 +1,4 @@
-package vnjp.monstarlablifetime.mochichat.screen.infor
+package vnjp.monstarlablifetime.mochichat.screen.profile
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 
-class FragmentInfoPerson : Fragment(){
+class ProfileFragment : Fragment(){
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

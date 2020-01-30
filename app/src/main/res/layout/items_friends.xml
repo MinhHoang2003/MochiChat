@@ -45,7 +45,7 @@
             app:layout_constraintTop_toBottomOf="@id/textUserName" />
 
         <TextView
-            android:id="@+id/textUserStatus"
+            android:id="@+id/textLastMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
