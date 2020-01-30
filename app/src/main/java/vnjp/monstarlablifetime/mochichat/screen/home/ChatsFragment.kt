@@ -25,7 +25,6 @@ class ChatsFragment : Fragment() {
     companion object {
         var TAG: String = ChatsFragment::class.java.simpleName
     }
-
     private lateinit var recyclerViewRecentChats: RecyclerView
     private lateinit var chatsAdapter: ChatsAdapter
 
@@ -44,17 +43,14 @@ class ChatsFragment : Fragment() {
             override fun onCancelled(p0: DatabaseError) {
                 Log.d(TAG, p0.message)
             }
-
             override fun onDataChange(p0: DataSnapshot) {
                 val chat = p0.getValue(ChatMappingItem::class.java)
                 Log.d(TAG, chat?.chat_status?.size.toString())
             }
-
         })
         recyclerViewRecentChats.layoutManager = LinearLayoutManager(context)
         chatsAdapter = ChatsAdapter(optional, context!!)
         recyclerViewRecentChats.adapter = chatsAdapter
-
         return view
     }
 
@@ -69,7 +65,6 @@ class ChatsFragment : Fragment() {
     }
 
     private fun init() {
-
         buttonShowChatHistory.setOnClickListener {
             if (expandedLayoutChatHistory.isExpanded) expandedLayoutChatHistory.collapse()
             else expandedLayoutChatHistory.expand()
@@ -78,7 +73,6 @@ class ChatsFragment : Fragment() {
             if (expandedLayoutFriend.isExpanded) expandedLayoutFriend.collapse()
             else expandedLayoutFriend.expand()
         }
-
     }
 
     override fun onStop() {

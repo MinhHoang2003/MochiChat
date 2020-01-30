@@ -1,6 +1,7 @@
 package vnjp.monstarlablifetime.mochichat.screen.home
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -37,53 +38,22 @@ class ChatsAdapter(
         p0.bind(snapshots.getSnapshot(p1).key!!)
     }
 
-    private fun checkStatus(users: ArrayList<String>, itemView: View): Boolean {
-        users.forEach {
-            FirebaseDatabase.getInstance().getReference("users").child(it)
-                .child("status")
-                .addValueEventListener(object : ValueEventListener {
-                    var onlineCount = 0
-                    var offlineCount = 0
-                    override fun onCancelled(p0: DatabaseError) {
-                        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-                    }
-
-                    override fun onDataChange(p0: DataSnapshot) {
-                        val status = p0.getValue(String::class.java)
-                        if (status == Status.ONLINE &&
-                            onlineCount < users.size &&
-                            offlineCount > 0
-                        ) {
-                            if (onlineCount + offlineCount == users.size) {
-                                onlineCount++
-                                offlineCount--
-                            } else onlineCount++
-
-                        }
-                        if (status == Status.ONLINE &&
-                            offlineCount < users.size &&
-                            onlineCount > 0 &&
-                            onlineCount + offlineCount == users.size
-                        ) {
-                            if (onlineCount + offlineCount == users.size) {
-                                onlineCount--
-                                offlineCount++
-                            } else offlineCount++
-                        }
-                        if (onlineCount > 0) {
+    fun getItem(key: String, itemView: View) {
+        val chatsRepository = ChatsRepository()
+        chatsRepository.getChats(key,
+            onDataLoad = { chat ->
+                Glide.with(context).load(chat.image).into(itemView.imageUser)
+                chat.paticipants?.let { it1 -> chatsRepository.getStatus(key, it1) }
+                Log.d("status", " $key from get to onchange")
+                chatsRepository.listeningChatStatus(key,
+                    onDataLoad = { value ->
+                        Log.d("status", "on status in getItem $key : $value")
+                        if (value) {
                             itemView.userStatus.setBackgroundResource(R.drawable.bg_user_status_online)
                         } else itemView.userStatus.setBackgroundResource(R.drawable.bg_user_status_bussy)
-                    }
-                })
-        }
-        return false
-    }
-
-    fun getItem(key: String, itemView: View) {
-        ChatsRepository().getChats(key,
-            onDataLoad = {
-                Glide.with(context).load(it.image).into(itemView.imageUser)
-                it.paticipants?.let { it1 -> checkStatus(it1, itemView) }
+                    }, onError = {
+                        Log.d("status", it)
+                    })
 //                itemView.textUserName.text = item.name
 //                itemView.textLastMessage.text = item.last_message
 //                if (item.chat_status?.let { checkStatus(it) }!!) {

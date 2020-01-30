@@ -1,7 +1,7 @@
 package vnjp.monstarlablifetime.mochichat.data.model
 
 import com.google.firebase.database.PropertyName
-import java.util.*
+
 
 data class Chat(
     @PropertyName("contents")
@@ -9,5 +9,5 @@ data class Chat(
     @PropertyName("image")
     var image: String? = null,
     @PropertyName("paticipants")
-    var paticipants: ArrayList<String>? = null
+    var paticipants: HashMap<String, Boolean>? = null
 )

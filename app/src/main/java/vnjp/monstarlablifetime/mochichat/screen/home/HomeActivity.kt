@@ -30,13 +30,6 @@ class HomeActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         setContentView(R.layout.landing_page_screen)
         init()
         loadFragment(ChatsFragment())
-
-//        ChatsRepository().getChats("chat01",
-//            onDataLoad = { item ->
-//                Log.d("firebase", item.image.toString())
-//            }, onFailure = {
-//
-//            })
     }
 
     private fun init() {
