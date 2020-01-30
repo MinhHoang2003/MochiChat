@@ -6,6 +6,8 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import vnjp.monstarlablifetime.mochichat.data.model.Chat
+import vnjp.monstarlablifetime.mochichat.data.model.Status
+
 
 class ChatsRepository {
     private val databaseReference = FirebaseDatabase.getInstance().getReference("chats")
@@ -31,5 +33,61 @@ class ChatsRepository {
             }
 
         })
+    }
+    fun listeningChatStatus(
+        chatKey: String,
+        onDataLoad: (Boolean) -> Unit,
+        onError: (String) -> Unit
+    ) {
+        FirebaseDatabase.getInstance().getReference("chats").child(chatKey)
+            .child("paticipants")
+            .addValueEventListener(object : ValueEventListener {
+                override fun onCancelled(p0: DatabaseError) {
+                    onError.invoke(p0.message)
+                }
+
+                override fun onDataChange(p0: DataSnapshot) {
+                    for (snap in p0.children) {
+                        val value = snap.getValue(Boolean::class.java)
+                        if (value == true) {
+                            onDataLoad.invoke(true)
+                            return
+                        }
+                    }
+                    onDataLoad.invoke(false)
+                }
+
+            })
+    }
+
+    fun getStatus(
+        chatKey: String,
+        users: HashMap<String, Boolean>
+    ): Boolean {
+        for ((key, v) in users) {
+            FirebaseDatabase.getInstance().getReference("users").child(key)
+                .child("status")
+                .addValueEventListener(object : ValueEventListener {
+
+                    override fun onCancelled(p0: DatabaseError) {
+                        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                    }
+                    override fun onDataChange(p0: DataSnapshot) {
+                        val status = p0.getValue(String::class.java)
+                        if (status == Status.ONLINE) {
+                            setUserStatusOfChat(chatKey, key, true)
+                        } else setUserStatusOfChat(chatKey, key, false)
+                    }
+                })
+        }
+        return false
+    }
+
+    private fun setUserStatusOfChat(chatKey: String, userKey: String, value: Boolean) {
+        FirebaseDatabase.getInstance().getReference("chats").child(chatKey)
+            .child("paticipants")
+            .child(userKey)
+            .setValue(value)
+
     }
 }
