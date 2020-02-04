@@ -1,8 +1,6 @@
 package vnjp.monstarlablifetime.mochichat.screen.chat
 
-import android.content.Intent
 import android.os.Bundle
-import android.provider.ContactsContract.Intents.Insert.ACTION
 import android.util.Log
 import android.view.View
 import android.widget.EditText
@@ -57,29 +55,36 @@ class ChatDetailActivity : AppCompatActivity(), View.OnClickListener {
         chatDetailAdapter = ChatDetailAdapter(firebaseRecyclerOptions, this)
         query.addValueEventListener(object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                Log.d("items", "on error : " + p0.message)
             }
 
             override fun onDataChange(p0: DataSnapshot) {
-                Log.d("items", chatDetailAdapter.itemCount.toString())
-                val intent = Intent()
-                intent.action = ACTION
-//                localBroadcastManager.sendBroadcast(intent)
-            //    recycleView.smoothScrollToPosition(chatDetailAdapter.snapshots.size - 1)
+                Log.d("items", "on data change : " + p0.childrenCount)
+                if (chatDetailAdapter.itemCount - 1 > 0) recycleView.smoothScrollToPosition(
+                    chatDetailAdapter.itemCount - 1
+                )
             }
         })
         chatDetailAdapter.startListening()
+
+        recycleView.adapter = chatDetailAdapter
         chatDetailAdapter.registerAdapterDataObserver(object : RecyclerView.AdapterDataObserver() {
             override fun onChanged() {
-                recycleView.smoothScrollToPosition(chatDetailAdapter.snapshots.size - 1)
+                Log.d("items", chatDetailAdapter.snapshots.size.toString())
+                if (chatDetailAdapter.snapshots.size - 1 > 0)
+                    recycleView.smoothScrollToPosition(chatDetailAdapter.snapshots.size - 1)
             }
         })
-        recycleView.adapter = chatDetailAdapter
+    }
+
+    override fun onDetachedFromWindow() {
+        super.onDetachedFromWindow()
+        chatDetailAdapter.stopListening()
+
     }
 
     override fun onStop() {
         super.onStop()
-        chatDetailAdapter.stopListening()
     }
 
     override fun onClick(v: View?) {
@@ -89,7 +94,7 @@ class ChatDetailActivity : AppCompatActivity(), View.OnClickListener {
                     edtEnterMessage.text.toString() + String(Character.toChars(0x1F60A)),
                     "text",
                     "13:53 13/01/2020",
-                    "test02",
+                    "test01",
                     arrayListOf("test01")
                 )
                 postChat(content)

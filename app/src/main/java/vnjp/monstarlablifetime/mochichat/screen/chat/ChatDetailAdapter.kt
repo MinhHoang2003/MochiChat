@@ -34,13 +34,17 @@ class ChatDetailAdapter(query: FirebaseRecyclerOptions<Content>, private val con
         }
     }
 
+    override fun getItemCount(): Int {
+        return snapshots.size
+    }
+
     abstract class BaseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         abstract fun bind(data: Content)
     }
 
     inner class ChatSendViewHolder(itemView: View) : BaseViewHolder(itemView) {
         override fun bind(data: Content) {
-//            itemView.textSend.text = data.content
+            itemView.textSend.text = data.content
         }
     }
 
@@ -53,7 +57,7 @@ class ChatDetailAdapter(query: FirebaseRecyclerOptions<Content>, private val con
     inner class ChatReciveLastViewHolder(itemView: View) : BaseViewHolder(itemView) {
         override fun bind(data: Content) {
             itemView.textDate.text = data.date
-            itemView.textContent.text = data.content
+            itemView.textSend.text = data.content
         }
     }
 
@@ -61,7 +65,8 @@ class ChatDetailAdapter(query: FirebaseRecyclerOptions<Content>, private val con
         return when (viewType) {
             CHAT_SEND -> {
                 val view =
-                    LayoutInflater.from(context).inflate(R.layout.chat_send_first, parent, false)
+                    LayoutInflater.from(context)
+                        .inflate(R.layout.chat_send_last_items, parent, false)
                 ChatSendViewHolder(view)
             }
             CHAT_RECEIVE -> {
