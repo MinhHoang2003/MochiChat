@@ -15,15 +15,17 @@
         <activity android:name=".screen.authenication.login.RegisterActivity"></activity>
 
 
-        <activity android:name=".screen.home.HomeActivity"></activity>
-        <activity android:name=".screen.authenication.login.LoginActivity" />
-        <activity android:name=".screen.introduction.IntroductionActivity" />
-        <activity android:name=".screen.chat.ChatDetailActivity"></activity>
-        <activity android:name=".screen.splash.SplashActivity">
+        <activity android:name=".screen.home.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".screen.authenication.login.LoginActivity" />
+        <activity android:name=".screen.introduction.IntroductionActivity" />
+        <activity android:name=".screen.chat.ChatDetailActivity"></activity>
+        <activity android:name=".screen.splash.SplashActivity">
+
         </activity>
 
     </application>

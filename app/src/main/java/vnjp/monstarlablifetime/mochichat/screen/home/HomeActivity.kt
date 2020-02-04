@@ -1,14 +1,12 @@
 package vnjp.monstarlablifetime.mochichat.screen.home
 
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.landing_page_screen.*
 import vnjp.monstarlablifetime.mochichat.R
-import vnjp.monstarlablifetime.mochichat.data.repository.ChatsRepository
 import vnjp.monstarlablifetime.mochichat.screen.SettingFragment
 import vnjp.monstarlablifetime.mochichat.screen.contacts.ContactsFragment
 import vnjp.monstarlablifetime.mochichat.screen.groups.FragmentGroups
@@ -33,7 +31,9 @@ class HomeActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     }
 
     private fun init() {
+        setSupportActionBar(toolBar)
         bottomNavigation.itemIconTintList = null
+        bottomNavigation.setOnNavigationItemSelectedListener(this)
     }
 
     override fun onNavigationItemSelected(p0: MenuItem): Boolean {
