@@ -1,4 +1,4 @@
-package vnjp.monstarlablifetime.mochichat.screen
+package vnjp.monstarlablifetime.mochichat.screen.setting
 
 
 import android.os.Bundle

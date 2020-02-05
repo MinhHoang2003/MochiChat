@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.*
 import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -22,6 +23,7 @@ import vnjp.monstarlablifetime.mochichat.data.model.OptionalButton
 import vnjp.monstarlablifetime.mochichat.data.model.OptionalClickListener
 import vnjp.monstarlablifetime.mochichat.screen.SwipeHelper
 import vnjp.monstarlablifetime.mochichat.screen.chat.ChatDetailActivity
+import vnjp.monstarlablifetime.mochichat.screen.home.ChatsFragment.Companion.KEY_ITEM
 
 /**
  * A simple [Fragment] subclass.
@@ -34,6 +36,11 @@ class ChatsFragment : Fragment() {
 
     private lateinit var recyclerViewRecentChats: RecyclerView
     private lateinit var chatsAdapter: ChatsAdapter
+    override fun onCreate(savedInstanceState: Bundle?) {
+        setHasOptionsMenu(true)
+        super.onCreate(savedInstanceState)
+
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -106,10 +113,7 @@ class ChatsFragment : Fragment() {
         return view
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
+
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         menu.clear()

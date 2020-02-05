@@ -1,6 +1,8 @@
 package vnjp.monstarlablifetime.mochichat.screen.chat
 
+import android.content.Intent
 import android.os.Bundle
+import android.provider.ContactsContract.Intents.Insert.ACTION
 import android.util.Log
 import android.view.View
 import android.widget.EditText
@@ -36,6 +38,7 @@ class ChatDetailActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun initEvent() {
         imbSend.setOnClickListener(this)
+        imbBack.setOnClickListener(this)
     }
 
     private fun initView() {
@@ -59,10 +62,18 @@ class ChatDetailActivity : AppCompatActivity(), View.OnClickListener {
             }
 
             override fun onDataChange(p0: DataSnapshot) {
+
                 Log.d("items", "on data change : " + p0.childrenCount)
                 if (chatDetailAdapter.itemCount - 1 > 0) recycleView.smoothScrollToPosition(
                     chatDetailAdapter.itemCount - 1
                 )
+
+                Log.d("items", chatDetailAdapter.itemCount.toString())
+                val intent = Intent()
+                intent.action = ACTION
+//                localBroadcastManager.sendBroadcast(intent)
+                //    recycleView.smoothScrollToPosition(chatDetailAdapter.snapshots.size - 1)
+
             }
         })
         chatDetailAdapter.startListening()
@@ -70,9 +81,13 @@ class ChatDetailActivity : AppCompatActivity(), View.OnClickListener {
         recycleView.adapter = chatDetailAdapter
         chatDetailAdapter.registerAdapterDataObserver(object : RecyclerView.AdapterDataObserver() {
             override fun onChanged() {
+
                 Log.d("items", chatDetailAdapter.snapshots.size.toString())
                 if (chatDetailAdapter.snapshots.size - 1 > 0)
                     recycleView.smoothScrollToPosition(chatDetailAdapter.snapshots.size - 1)
+
+                //recycleView.smoothScrollToPosition(chatDetailAdapter.snapshots.size - 1)
+
             }
         })
     }
@@ -99,6 +114,8 @@ class ChatDetailActivity : AppCompatActivity(), View.OnClickListener {
                 )
                 postChat(content)
             }
+            imbBack ->
+                finish()
         }
     }
 

@@ -40,7 +40,7 @@
         android:background="@drawable/bg_edittext"
         android:inputType="textEmailAddress"
         android:maxLines="1"
-        android:text="m@gmail.com"
+        android:text="a@gmail.com"
         android:singleLine="true"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
