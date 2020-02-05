@@ -44,7 +44,11 @@ class ChatDetailAdapter(query: FirebaseRecyclerOptions<Content>, private val con
 
     inner class ChatSendViewHolder(itemView: View) : BaseViewHolder(itemView) {
         override fun bind(data: Content) {
+
             itemView.textSend.text = data.content
+
+            //itemView.textContent.text = data.content
+
         }
     }
 

@@ -8,8 +8,8 @@
     <color name="colorMessageUnread">#f5a623</color>
     <color name="colorOnlineStatus">#7ed321</color>
     <color name="white">#FFFFFF</color>
-    <color name="black">#000000</color>
-    <color name="chatReceive">#4dd0e1</color>
+    <color name="black">#584E4E</color>
+    <color name="chatReceive">#FEFFFF</color>
     <color name="blue">#000dff</color>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#a8e490</color>
@@ -20,7 +20,7 @@
     <color name="color_text_white">#FFFFFF</color>
     <color name="color_text">#4a4a4a</color>
     <color name="color_blue">#4a90e2</color>
-    <color name="chatSend">#aed581</color>
+    <color name="chatSend">#F1FEDE</color>
     <color name="color_text_hint">#8e8e92</color>
 
 </resources>

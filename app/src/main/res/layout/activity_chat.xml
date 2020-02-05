@@ -10,15 +10,16 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/contentConstraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="50dp"
+        android:elevation="6dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
+            android:id="@+id/imbBack"
             android:layout_width="56dp"
             android:layout_height="56dp"
-            android:layout_marginStart="6dp"
             android:background="@drawable/bg_click"
             android:src="@drawable/ic_back"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -53,6 +54,11 @@
         android:id="@+id/recycleView"
         android:layout_width="0dp"
         android:layout_height="0dp"
+<<<<<<< HEAD
+=======
+        android:layout_marginTop="2dp"
+        android:background="@drawable/background1"
+>>>>>>> edit ui
         app:layout_constraintBottom_toTopOf="@+id/contentSend"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -63,6 +69,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#ffffff"
+        android:maxHeight="150dp"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="0dp">
 
@@ -75,8 +82,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@+id/imbCamera"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="ContentDescription" />
+            tools:ignore="ContentDescription,MissingConstraints" />
 
         <ImageButton
             android:id="@+id/imbCamera"
@@ -84,6 +90,11 @@
             android:layout_height="56dp"
             android:background="@drawable/bg_click"
             android:src="@drawable/ic_camera"
+<<<<<<< HEAD
+=======
+
+            app:layout_constraintBottom_toBottomOf="parent"
+>>>>>>> edit ui
             app:layout_constraintLeft_toRightOf="@+id/imbMore"
             tools:ignore="ContentDescription,MissingConstraints" />
 
@@ -93,21 +104,36 @@
             android:layout_height="56dp"
             android:background="@drawable/bg_click"
             android:src="@drawable/ic_voice"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@+id/imbCamera"
+            app:layout_constraintVertical_bias="0.0"
             tools:ignore="ContentDescription,MissingConstraints" />
 
         <EditText
             android:id="@+id/edtEnterMessage"
             android:layout_width="220dp"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
+=======
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+>>>>>>> edit ui
             android:background="@drawable/bg_edittext_message"
             android:drawableEnd="@drawable/ic_emoji"
             android:focusable="true"
             android:focusableInTouchMode="true"
+<<<<<<< HEAD
             android:hint="@string/aa"
             android:inputType="textMultiLine"
             android:maxLines="6"
             android:padding="10dp"
+=======
+            app:layout_constraintTop_toTopOf="parent"
+            android:hint="@string/aa"
+            android:inputType="textMultiLine"
+            android:maxHeight="80dp"
+            android:padding="8dp"
+>>>>>>> edit ui
             android:paddingStart="12dp"
             android:paddingEnd="8dp"
             android:textColor="@color/color_text"
@@ -115,15 +141,19 @@
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@+id/imbVoice"
+<<<<<<< HEAD
             app:layout_constraintTop_toTopOf="parent"
+=======
+>>>>>>> edit ui
             tools:ignore="Autofill,RtlSymmetry" />
 
         <ImageButton
             android:id="@+id/imbSend"
-            android:layout_width="42dp"
+            android:layout_width="48dp"
             android:layout_height="56dp"
             android:background="@drawable/bg_click"
             android:src="@drawable/icon_send"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             tools:ignore="ContentDescription,MissingConstraints" />
 
