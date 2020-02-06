@@ -42,11 +42,13 @@
         android:id="@+id/textDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_toRightOf="@id/profile_image"
-        android:text="16:12 10/01/2020"
+        android:layout_marginTop="3dp"
+        android:layout_toEndOf="@id/profile_image"
+        android:text="16:00"
+        android:textSize="12sp"
         app:layout_constraintLeft_toLeftOf="@id/textSend"
-        app:layout_constraintTop_toBottomOf="@id/textSend" />
+        app:layout_constraintTop_toBottomOf="@id/textSend"
+        tools:ignore="HardcodedText" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

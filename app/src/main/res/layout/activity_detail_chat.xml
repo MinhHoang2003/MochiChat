@@ -61,6 +61,37 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contentConstraintLayout" />
 
+    <RelativeLayout
+        android:id="@+id/contentImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="4dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/contentSend"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <ImageView
+            android:id="@+id/imgImageSend"
+            android:layout_width="96dp"
+            android:layout_height="120dp"
+            android:background="@android:color/black"
+            android:scaleType="centerCrop"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/imbDelete"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="-24dp"
+            android:layout_marginTop="4dp"
+            android:layout_toEndOf="@id/imgImageSend"
+            android:background="@null"
+            android:padding="8dp"
+            android:src="@drawable/ic_exit"
+            tools:ignore="ContentDescription" />
+    </RelativeLayout>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/contentSend"
         android:layout_width="match_parent"
@@ -70,16 +101,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="0dp">
 
-        <ImageButton
-            android:id="@+id/imbMore"
-            android:layout_width="48dp"
-            android:layout_height="56dp"
-            android:background="@drawable/bg_click"
-            android:src="@drawable/ic_more"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/imbCamera"
-            tools:ignore="ContentDescription,MissingConstraints" />
+        <!--        <ImageButton-->
+        <!--            android:id="@+id/imbMore"-->
+        <!--            android:layout_width="48dp"-->
+        <!--            android:layout_height="56dp"-->
+        <!--            android:background="@drawable/bg_click"-->
+        <!--            android:src="@drawable/ic_more"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--            app:layout_constraintRight_toLeftOf="@+id/imbCamera"-->
+        <!--            tools:ignore="ContentDescription,MissingConstraints" />-->
 
         <ImageButton
             android:id="@+id/imbCamera"
@@ -87,6 +118,8 @@
             android:layout_height="56dp"
             android:background="@drawable/bg_click"
             android:src="@drawable/ic_camera"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
             tools:ignore="ContentDescription,MissingConstraints" />
 
         <ImageButton
@@ -100,9 +133,20 @@
             app:layout_constraintVertical_bias="0.0"
             tools:ignore="ContentDescription,MissingConstraints" />
 
+        <ImageButton
+            android:id="@+id/imbGallery"
+            android:layout_width="48dp"
+            android:layout_height="56dp"
+            android:background="@drawable/bg_click"
+            android:src="@drawable/ic_gallery"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/imbVoice"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="ContentDescription,MissingConstraints" />
+
         <EditText
             android:id="@+id/edtEnterMessage"
-            android:layout_width="220dp"
+            android:layout_width="210dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
@@ -112,36 +156,26 @@
             android:focusableInTouchMode="true"
             android:hint="@string/aa"
             android:inputType="textMultiLine"
-            android:maxLines="6"
-            app:layout_constraintTop_toTopOf="parent"
             android:maxHeight="80dp"
+            android:maxLines="6"
             android:padding="8dp"
             android:textColor="@color/color_text"
             android:textCursorDrawable="@drawable/bg_color_cursor"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@+id/imbVoice"
+            app:layout_constraintRight_toLeftOf="@+id/imbSend"
+            app:layout_constraintTop_toTopOf="parent"
             tools:ignore="Autofill,RtlSymmetry" />
 
         <ImageButton
             android:id="@+id/imbSend"
-            android:layout_width="48dp"
+            android:layout_width="52dp"
             android:layout_height="56dp"
             android:background="@drawable/bg_click"
             android:src="@drawable/icon_send"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             tools:ignore="ContentDescription,MissingConstraints" />
-
-        <!--        <View-->
-        <!--            android:id="@+id/View"-->
-        <!--            android:layout_width="1dp"-->
-        <!--            android:layout_height="32dp"-->
-        <!--            android:background="#e8e8e9"-->
-        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--            app:layout_constraintRight_toLeftOf="@+id/imbVoice"-->
-        <!--            app:layout_constraintTop_toTopOf="parent" />-->
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
